@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import './App.css'
+import React, { useState, useEffect } from 'react'
 import Header from './components/Header' 
 import {
   BrowserRouter as Router,
@@ -7,11 +6,24 @@ import {
   Route,
 } from "react-router-dom";
 import ChessForm from './components/ChessForm'
-import Graphs from './components/Graphs'
+import Graphs from './components/graphGroup/Graphs'
 import {Container} from 'react-bootstrap'
+import axios from 'axios'
 
-export default class App extends Component {
-  render() {
+export default function App() {
+
+  const [players, setPlayers]=useState([])
+
+  useEffect(() => {
+    axios.get(process.env.REACT_APP_API_URL).then(
+        (res)=>{console.log('response',res.data)
+                
+                setPlayers(res.data)
+              
+                }
+    )
+}, [])
+ 
     return (
       <div>
         <Router>
@@ -19,10 +31,10 @@ export default class App extends Component {
         <Header />
         <Switch>
           <Route path="/Graphs">
-            <Graphs />
+            <Graphs players={players} />
           </Route>
           <Route exact path="/">
-            <ChessForm />
+            <ChessForm  setPlayers={setPlayers} players={players} />
           </Route>
         </Switch>
         </Container>
@@ -30,6 +42,5 @@ export default class App extends Component {
         </Router>
       </div>
     )
-  }
 }
 

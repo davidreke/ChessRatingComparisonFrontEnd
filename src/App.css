@@ -10,3 +10,38 @@
 .question, .ratingInput{
   margin-left: 40px;
 }
+
+.inline-drop{
+  display: inline-block
+}
+
+.select h2, span, button{
+  font-size: 10px !important
+}
+
+.higher{
+  color: green;
+}
+
+.lower{
+  color: red;
+}
+
+.lower, .higher {
+  font-weight: 750;
+}
+
+.difference > *{
+  font-size: 12px
+}
+
+.difference {
+  margin-top: 2.5vh
+}
+
+.dropdown-toggle{
+  margin: 1em;
+}
+
+
+
