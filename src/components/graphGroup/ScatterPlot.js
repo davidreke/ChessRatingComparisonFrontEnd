@@ -129,10 +129,12 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
                 
                   svg.selectAll('path')
                   .on("mouseover", (e, d) => {
+                      let x_value = Math.round(xScale.invert(e.pageX)-(spacing*2));
+                      let y_value = Math.round(linearRegressionLine(x_value));
                       let content = `<div class='tooltip-label'>
-                      ${filter_one.org}-${filter_one.type}: ${Math.round(d[1]['y'])}
+                      ${filter_one.org}-${filter_one.type}: ${x_value}
                     <br/>
-                    ${filter_two.org}-${filter_two.type}: ${Math.round(linearRegressionLine(d[1]['y']))}
+                    ${filter_two.org}-${filter_two.type}: ${y_value}
                       </div>`;
                       tip.html(content).style("visibility", "visible")
                       console.log(d)

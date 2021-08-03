@@ -85,5 +85,13 @@ body{
   margin-bottom: 0;
 }
 
+#aboutMeImg{
+  height: auto;
+  max-height: 80vh
+}
+
+#right-about-box{
+  border-right: 5px solid black;
+}
 
 
