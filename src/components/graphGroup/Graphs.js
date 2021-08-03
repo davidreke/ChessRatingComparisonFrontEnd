@@ -89,6 +89,8 @@ export default function Graphs({players}) {
             case 'USCF: Blitz':
                 return {org:'USCF', type:'blitz'};
                 break;
+            default:
+                return {org: null, type: null}
         
         }
    }
