@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import MembershipForm from './MembershipForm'
 import axios from 'axios'
-// import {API_URL,API_SECRET} from '../config'
+
 
 export default function ChessForm({players, setPlayers}) {
     const [FIDE, setFide] = useState(false)
@@ -20,15 +20,12 @@ export default function ChessForm({players, setPlayers}) {
 
     const submitRecord = (e) => {
         e.preventDefault();
-        // console.log(record)
         let newPlayers =[...players, record]
         setPlayers(newPlayers)
         axios.post(process.env.REACT_APP_API_URL, record).then((res)=>{
             console.log('check the database')
         }
         )
-        console.log(newPlayers)
-        console.log(process.env)
         setSubmitted(true)
 
     }
