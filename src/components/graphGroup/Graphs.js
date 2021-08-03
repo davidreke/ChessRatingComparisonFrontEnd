@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import RatingDifference from './RatingDifference'
 import RatingSelection from './RatingSelection'
 import ScatterPlot from './ScatterPlot'
@@ -24,7 +24,7 @@ export default function Graphs({players}) {
         setFilter_one(first_filter)
         setFilter_two(second_Filter)
 
-        let newPlayers = players.filter(player => (player[first_filter.org][first_filter.type] && player [second_Filter.org][second_Filter.type]))
+        let newPlayers = players.filter(player => (player[first_filter.org][first_filter.type] && player[second_Filter.org][second_Filter.type]))
         setFilteredPlayers(newPlayers)
         console.log('new players: ',newPlayers);
         let first_total = 0
