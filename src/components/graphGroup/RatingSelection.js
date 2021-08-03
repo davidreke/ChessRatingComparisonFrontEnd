@@ -31,6 +31,7 @@ export default function RatingSelection({filterPlayers}) {
             <h2 className='select' >Compare ratings for 
                 <span>
                     <Dropdown
+                    className='selector'
                     className='inline-drop'
                     isOpen={firstOpen}
                     toggle={firstOpen}
@@ -70,7 +71,7 @@ export default function RatingSelection({filterPlayers}) {
                             LiChess.org: Correspondence
                         </Dropdown.Item>
                         <Dropdown.Item onClick={(e)=>{submitOption(1)(e)}}>
-                            LiChess.org: Training
+                            LiChess.org: Puzzle
                         </Dropdown.Item>
                         <Dropdown.Item onClick={(e)=>{submitOption(1)(e)}}>
                             FIDE: Standard
@@ -97,8 +98,9 @@ export default function RatingSelection({filterPlayers}) {
                     </Dropdown>
                 </span> 
                 and 
-                <span>
+                <span >
                     <Dropdown
+                    className='selector'
                     className='inline-drop'
                     isOpen={secondOpen}
                     toggle={secondOpen}
@@ -139,7 +141,7 @@ export default function RatingSelection({filterPlayers}) {
                             LiChess.org: Correspondence
                         </Dropdown.Item>
                         <Dropdown.Item  onClick={(e)=>{submitOption(2)(e)}}>
-                            LiChess.org: Training
+                            LiChess.org: Puzzle
                         </Dropdown.Item>
                         <Dropdown.Item  onClick={(e)=>{submitOption(2)(e)}}>
                             FIDE: Standard

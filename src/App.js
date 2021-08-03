@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import ChessForm from './components/ChessForm'
+import ChessForm from './components/formGroup/ChessForm'
 import Graphs from './components/graphGroup/Graphs'
 import {Container} from 'react-bootstrap'
 import axios from 'axios'
@@ -27,7 +27,7 @@ export default function App() {
     return (
       <div>
         <Router>
-        <Container>
+        <Container className='main-container'>
         <Header />
         <Switch>
           <Route path="/Graphs">

@@ -6,7 +6,7 @@ export default function RatingDifference({label_one, label_two, avg_difference})
 
     return (
         <div className='fade-in difference'>
-            <p>On average {label_one} is {Math.round(Math.abs(avg_difference))} points {higherOrLower} than {label_two}</p>
+            <p id='difference'>On average {label_one} is {Math.round(Math.abs(avg_difference))} points {higherOrLower} than {label_two}</p>
         </div>
     )
 }

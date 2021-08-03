@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import RatingDifference from './RatingDifference'
 import RatingSelection from './RatingSelection'
 import ScatterPlot from './ScatterPlot'
+import NoComparison from '../noData/NoComparison'
+import NoGraph from '../noData/NoGraph'
 
 export default function Graphs({players}) {
    const [comparisons, setComparisons] =useState({firstComparison:null, secondComparison:null})
@@ -69,8 +71,8 @@ export default function Graphs({players}) {
             case 'LiChess.org: Correspondence':
                 return {org:'LiChess', type:'correspondence'};
                 break;
-            case 'LiChess.org: Training':
-                return {org:'LiChess', type:'training'};
+            case 'LiChess.org: Puzzle':
+                return {org:'LiChess', type:'puzzle'};
                 break;
             case 'FIDE: Standard':
                 return {org:'FIDE', type:'standard'};
@@ -94,11 +96,18 @@ export default function Graphs({players}) {
         return (
             <div>
                 <RatingSelection  comparisons={comparisons} setComparisons={setComparisons} filterPlayers={filterPlayers} />
-                {label_one && label_two &&
+
+                {(filteredPlayers.length <= 1) && label_one && label_two &&  <NoGraph/>}
+
+                
+                {label_one && label_two && (filteredPlayers.length > 1 ) &&
                     <ScatterPlot filteredPlayers={filteredPlayers} filter_one={filter_one} filter_two={filter_two} />
                 }
+
+                {(filteredPlayers.length <= 0) && label_one && label_one &&  <NoComparison/>}
+
                 
-                {label_one && label_two &&
+                {label_one && label_two && (filteredPlayers.length > 0 ) &&
                     <RatingDifference label_one={label_one} label_two={label_two} avg_difference={avg_difference}  />
                 }
                 

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Form, Button} from 'react-bootstrap'
-import MembershipForm from './formGroup/MembershipForm'
+import MembershipForm from './MembershipForm'
 import axios from 'axios'
 // import {API_URL,API_SECRET} from '../config'
 
@@ -13,7 +13,7 @@ export default function ChessForm({players, setPlayers}) {
         {FIDE:{standard: null, rapid: null, blitz:null},
         USCF:{regular: null, quick: null, blitz: null},
         ChessCom:{bullet:null, blitz:null, rapid:null, daily:null, puzzle:null},
-        LiChess:{bullet:null, blitz:null, rapid:null, classical:null, correspondence:null, training:null}})
+        LiChess:{bullet:null, blitz:null, rapid:null, classical:null, correspondence:null, puzzle:null}})
 
     
     const [submitted, setSubmitted]= useState(false)
@@ -37,7 +37,7 @@ export default function ChessForm({players, setPlayers}) {
     
         
     return (
-       <> 
+       <div id='chessForm'> 
         {(submitted === true) ? (<h2>Thank you for your submission</h2>): (<Form onSubmit={submitRecord}>
         <p>Please fill out the below form</p>
         <Form.Group>
@@ -70,11 +70,11 @@ export default function ChessForm({players, setPlayers}) {
             <Form.Check inline label='No' name='LiChess'  type='radio' className = 'mx-2' defaultChecked onClick={()=>{setLiChess(false)}} />
         </Form.Group>
 
-        {LiChess && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'classical', 'correspondence' , 'training']} name='LiChess' record={record} setRecord={setRecord} />}
+        {LiChess && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'classical', 'correspondence' , 'puzzle']} name='LiChess' record={record} setRecord={setRecord} />}
 
         <Button type='submit'>Submit</Button>
     </Form>)}
-    </> 
+    </div > 
     )
 }
 

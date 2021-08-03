@@ -1,5 +1,37 @@
+body{
+  background-image: url('./imgs/background.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding-bottom: 0;
+}
+
+.container.main-container{
+  background-color: white;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+@media screen and (min-width: 480px){
+  .container{
+    width: 75vw
+  }
+
+  nav > *{
+    font-size: 35px
+  }
+
+  span.navbar-brand{
+    font-size: 35px
+  }
+
+  #chessForm > *{
+    font-size: 20px
+  }
+}
+
 .fade-in{
   animation: fadeIn linear 1s;
+
 }
 
 @keyframes fadeIn {
@@ -15,9 +47,10 @@
   display: inline-block
 }
 
-.select h2, span, button{
-  font-size: 10px !important
+.select h2, button.selector{
+  font-size: 2rem important!
 }
+
 
 .higher{
   color: green;
@@ -32,7 +65,7 @@
 }
 
 .difference > *{
-  font-size: 12px
+  font-size: 20px
 }
 
 .difference {
@@ -41,6 +74,15 @@
 
 .dropdown-toggle{
   margin: 1em;
+}
+
+.noData{
+  font-size: 20px;
+  color: red;
+}
+
+#difference{
+  margin-bottom: 0;
 }
 
 
