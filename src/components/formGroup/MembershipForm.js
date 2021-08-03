@@ -7,10 +7,13 @@ export default function MembershipForm({inputs, name, record, setRecord}) {
   const [display, setDisplay] = useState({})
 
   useEffect(()=>{
-      inputs.forEach(input => {
-          var newDisplay = {...display}
-          newDisplay[name+input]=false
-          setDisplay(newDisplay)})
+      if(Object.keys(display).length === 0){
+        inputs.forEach(input => {
+            var newDisplay = {...display}
+            newDisplay[name+input]=false
+            setDisplay(newDisplay)})
+      }
+     
   },[display, inputs, name])
 
     const editDisplay = (input, visible) => {
