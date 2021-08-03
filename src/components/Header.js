@@ -16,7 +16,10 @@ export default class Header extends Component {
                     </Nav.Link>
                     <Nav.Link>
                         <Link to="/Graphs">Graphs</Link>
-                    </Nav.Link>              
+                    </Nav.Link> 
+                    <Nav.Link>
+                        <Link to="/About">About</Link>
+                    </Nav.Link>                
             </Nav>
         </Navbar>   
         )

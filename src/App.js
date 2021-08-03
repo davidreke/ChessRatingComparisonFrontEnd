@@ -5,8 +5,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import ChessForm from './components/ChessForm'
+import ChessForm from './components/formGroup/ChessForm'
 import Graphs from './components/graphGroup/Graphs'
+import About from './components/About/About'
 import {Container} from 'react-bootstrap'
 import axios from 'axios'
 
@@ -27,7 +28,7 @@ export default function App() {
     return (
       <div>
         <Router>
-        <Container>
+        <Container className='main-container'>
         <Header />
         <Switch>
           <Route path="/Graphs">
@@ -35,6 +36,9 @@ export default function App() {
           </Route>
           <Route exact path="/">
             <ChessForm  setPlayers={setPlayers} players={players} />
+          </Route>
+          <Route  path="/about">
+            <About   />
           </Route>
         </Switch>
         </Container>

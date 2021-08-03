@@ -23,7 +23,7 @@ export default function MembershipForm({inputs, name, record, setRecord}) {
         return (
             <div className='question' key={name+input}>
                 <Form.Group>
-                    <Form.Label className='mx-2'>Do you have a {name} {input} Rating?</Form.Label>
+                    <Form.Label className='mx-2'>Do you have a {name} {input} rating?</Form.Label>
                     <Form.Check inline label='Yes' value={true} name={name+input} type='radio' className = 'mx-2' onClick ={() =>{editDisplay(input, true)}} />
                     <Form.Check inline label='No' value ={false} name={name+input}  type='radio' className = 'mx-2' defaultChecked onClick = {() =>{editDisplay(input, false)}}  />
                 </Form.Group>
