@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {Dropdown } from 'react-bootstrap'
 
 export default function RatingSelection({filterPlayers}) {
-    const [firstOpen, setFirstOpen] = useState(false)
-    const [secondOpen, setSecondOpen] = useState(false)
+    const [firstOpen] = useState(false)
+    const [secondOpen] = useState(false)
     const [firstOption, setFirstOption]=useState('select a rating')
     const [secondOption, setSecondOption]=useState('select a rating')
 
