@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import MembershipForm from './MembershipForm'
 import axios from 'axios'
@@ -42,7 +42,7 @@ export default function ChessForm({players, setPlayers}) {
         <p>Please fill out the below form</p>
         <Form.Group>
             <Form.Label className='mx-2'>Do you have a FIDE membership?</Form.Label>
-            <Form.Check inline label='Yes' value={true} name='FIDE' type='radio' className = 'mx-2' name='FIDE'  onClick = {()=>{setFide(true)}}/>
+            <Form.Check inline label='Yes' value={true} type='radio' className = 'mx-2' name='FIDE'  onClick = {()=>{setFide(true)}}/>
             <Form.Check inline label='No' value ={false} name='FIDE'  type='radio' className = 'mx-2' defaultChecked  onClick={()=>{setFide(false)}}  />
         </Form.Group>
 

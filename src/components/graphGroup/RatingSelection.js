@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col, Container } from 'react-bootstrap'
+import {Dropdown } from 'react-bootstrap'
 
 export default function RatingSelection({filterPlayers}) {
     const [firstOpen, setFirstOpen] = useState(false)
@@ -8,11 +8,11 @@ export default function RatingSelection({filterPlayers}) {
     const [secondOption, setSecondOption]=useState('select a rating')
 
     const submitOption = (location) => (e) =>{
-        if(location == 1){
+        if(location === 1){
             console.log(e.target.innertext)
             setFirstOption(e.target.innerText)
             console.log(`first option set to ${e.target.innerText}`)
-        } else if(location ==2){
+        } else if(location === 2){
             setSecondOption(e.target.innerText)
             console.log(`second option set to ${e.target.innerText}`)
         }
@@ -21,9 +21,8 @@ export default function RatingSelection({filterPlayers}) {
     useEffect(()=>{
         if(firstOption !== 'select a rating' && secondOption !== 'select a rating'){
             filterPlayers(firstOption, secondOption)
-            console.log('filter players called')
         }
-    },[firstOption,secondOption])
+    },[firstOption,secondOption, filterPlayers])
 
 
     return (
@@ -31,8 +30,7 @@ export default function RatingSelection({filterPlayers}) {
             <h2 className='select' >Compare ratings for 
                 <span>
                     <Dropdown
-                    className='selector'
-                    className='inline-drop'
+                    className='selector inline-drop'
                     isOpen={firstOpen}
                     toggle={firstOpen}
                     >
