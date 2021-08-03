@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import * as d3 from "d3";
 import * as ss from 'simple-statistics'
-import { transition } from "d3-transition";
-import { filter, timeParse } from 'd3'
+
+
 
 
 
@@ -163,7 +163,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
               .style("fill", "#5FA19E");
           };
 
-    }, [filteredPlayers])
+    }, [filteredPlayers, filter_one.type, filter_one.org, filter_two.org, filter_two.type])
 
 
     return (
