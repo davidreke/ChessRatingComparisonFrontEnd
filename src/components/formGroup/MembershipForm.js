@@ -11,7 +11,7 @@ export default function MembershipForm({inputs, name, record, setRecord}) {
           var newDisplay = {...display}
           newDisplay[name+input]=false
           setDisplay(newDisplay)})
-  },[])
+  },[display, inputs, name])
 
     const editDisplay = (input, visible) => {
         var newDisplay ={...display}
