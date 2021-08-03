@@ -98,8 +98,7 @@ export default function RatingSelection({filterPlayers}) {
                 and 
                 <span >
                     <Dropdown
-                    className='selector'
-                    className='inline-drop'
+                    className='inline-drop selector'
                     isOpen={secondOpen}
                     toggle={secondOpen}
                     size="lg"
