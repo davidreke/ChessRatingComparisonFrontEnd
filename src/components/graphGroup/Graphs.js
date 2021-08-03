@@ -43,52 +43,52 @@ export default function Graphs({players}) {
         switch(rating_text){
             case 'Chess.com: Bullet':
                 return {org: 'ChessCom', type:'bullet'};
-                break;
+        
             case 'Chess.com: Blitz':
                 return {org: 'ChessCom', type:'blitz'};
-                break;
+         
             case 'Chess.com: Rapid':
                 return {org: 'ChessCom', type:'rapid'};
-                break;
+           
             case 'Chess.com: Daily':
                 return {org: 'ChessCom', type:'daily'};
-                break;
+            
             case 'Chess.com: Puzzle':
                 return {org: 'ChessCom', type:'blitz'};
-                break;
+           
             case 'LiChess.org: Bullet':
                 return {org:'LiChess', type:'bullet'};
-                break;
+       
             case 'LiChess.org: Blitz':
                 return {org:'LiChess', type:'blitz'};
-                break;
+         
             case 'LiChess.org: Rapid':
                 return {org:'LiChess', type:'rapid'};
-                break;
+          
             case 'LiChess.org: Classical':
                 return {org:'LiChess', type:'classical'};
-                break;
+       
             case 'LiChess.org: Correspondence':
                 return {org:'LiChess', type:'correspondence'};
-                break;
+            
             case 'LiChess.org: Puzzle':
                 return {org:'LiChess', type:'puzzle'};
-                break;
+           
             case 'FIDE: Standard':
                 return {org:'FIDE', type:'standard'};
-                break;
+   
             case 'FIDE: Rapid':
                 return {org:'FIDE', type:'rapid'};
-                break;
+                
             case 'USCF: Regular':
                 return {org:'USCF', type:'regular'};
-                break;
+               
             case 'USCF: Quick':
                 return {org:'USCF', type:'quick'};
-                break;
+          
             case 'USCF: Blitz':
                 return {org:'USCF', type:'blitz'};
-                break;
+             
             default:
                 return {org: null, type: null}
         
