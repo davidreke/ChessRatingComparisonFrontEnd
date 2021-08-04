@@ -99,6 +99,13 @@ export default function Graphs({players}) {
             <div>
                 <RatingSelection  comparisons={comparisons} setComparisons={setComparisons} filterPlayers={filterPlayers} />
 
+                {(filteredPlayers.length <= 0) && label_one && label_one &&  <NoComparison/>}
+                
+                {label_one && label_two && (filteredPlayers.length > 0 ) &&
+                    <RatingDifference label_one={label_one} label_two={label_two} avg_difference={avg_difference}  />
+                }
+
+
                 {(filteredPlayers.length <= 1) && label_one && label_two &&  <NoGraph/>}
 
                 
@@ -106,12 +113,7 @@ export default function Graphs({players}) {
                     <ScatterPlot filteredPlayers={filteredPlayers} filter_one={filter_one} filter_two={filter_two} />
                 }
 
-                {(filteredPlayers.length <= 0) && label_one && label_one &&  <NoComparison/>}
 
-                
-                {label_one && label_two && (filteredPlayers.length > 0 ) &&
-                    <RatingDifference label_one={label_one} label_two={label_two} avg_difference={avg_difference}  />
-                }
                 
 
             </div>

@@ -62,7 +62,6 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
 
        let linearRegression = ss.linearRegression(filteredPlayers.map(player => [player[filter_one.org][filter_one.type] , player[filter_two.org][filter_two.type]]))
 
-       console.log('linearRegression: ', linearRegression)
 
        let linearRegressionLine = ss.linearRegressionLine(linearRegression)
 
@@ -72,8 +71,6 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
         let regressionPoints = [
             {x:startPointX,y: linearRegressionLine(startPointX)},
             {x:finalPointX,y:linearRegressionLine(finalPointX)}]
-
-        console.log('linear regression: ', linearRegression)
 
         let line=d3.line()
         .x(d => xScale(d.x))
