@@ -101,6 +101,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
             .style("text-anchor", "middle")
             .text(`${filter_two.org}-${filter_two.type} rating:`)
 
+            
         // add toolip
         // const tip =d3.select("body")
         //     .append("div")
