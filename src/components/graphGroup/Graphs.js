@@ -70,6 +70,7 @@ export default function Graphs({ players }) {
         let second_avg = second_total / newPlayers.length;
         let difference = first_avg - second_avg
         setAvg_difference(difference)
+
     }, [players])
     return (
         <div>
