@@ -15,7 +15,7 @@ const findKey = (rating_text) => {
         case 'Chess.com: Daily':
             return { org: 'ChessCom', type: 'daily' };
         case 'Chess.com: Puzzle':
-            return { org: 'ChessCom', type: 'blitz' };
+            return { org: 'ChessCom', type: 'puzzle' };
         case 'LiChess.org: Bullet':
             return { org: 'LiChess', type: 'bullet' };
         case 'LiChess.org: Blitz':
