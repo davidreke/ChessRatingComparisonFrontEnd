@@ -12,8 +12,8 @@ export default function About() {
             <h2>Updates</h2>
                 <Updates />
             <Container>
-                <Row>
-                    <Col id='right-about-box'>
+                <Row md>
+                    <Col id='right-about-box' md>
                     <h2>About Me</h2>
                     <p>My name is David Reke. I am chess player and developer in the Cincinnati. This website is very new, so if you encounter any issues please let me know from one of the below accounts.</p>
 
@@ -24,7 +24,7 @@ export default function About() {
                         <li><a href="https://lichess.org/@/DavidDoesChess">LiChess</a></li>
                     </ul>
                     </Col>
-                    <Col>
+                    <Col md>
                         <img src={aboutMe} alt="" id='aboutMeImg' />
                     </Col>
                 </Row>

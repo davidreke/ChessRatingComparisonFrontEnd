@@ -13,7 +13,7 @@ export default function RatingInput({input,name, setRecord , record}) {
         <Container className='fade-in ratingInput'>
             <Row>
             
-                <Col><Form.Label inline>What is your {input} rating?</Form.Label></Col>
+                <Col md="auto"><Form.Label inline>What is your {input} rating?</Form.Label></Col>
                 <Col><Form.Control type='number' min ={500} max ={3200} className='w-50 h-75' onChange={updateRecord} /></Col>
             </Row>
             <Form.Group>

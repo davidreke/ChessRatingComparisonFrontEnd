@@ -10,6 +10,9 @@ body{
 }
 
 @media screen and (min-width: 900px){
+  #right-about-box{
+    border-right: 5px solid black;
+  }
   .main-container{
     width: 75vw
   }
@@ -48,6 +51,10 @@ body{
 
   #chessForm > *{
     font-size: 20px
+  }
+
+  #aboutMeImg{
+    display: none;
   }
 }
 
@@ -112,9 +119,7 @@ body{
   max-height: 80vh
 }
 
-#right-about-box{
-  border-right: 5px solid black;
-}
+
 
 .center{
   text-align: center;
