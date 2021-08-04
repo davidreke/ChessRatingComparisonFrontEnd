@@ -23,7 +23,6 @@ export default function ChessForm({players, setPlayers}) {
         let newPlayers =[...players, record]
         setPlayers(newPlayers)
         axios.post(process.env.REACT_APP_API_URL, record).then((res)=>{
-            console.log('check the database')
         }
         )
         setSubmitted(true)

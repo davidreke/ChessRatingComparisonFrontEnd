@@ -9,9 +9,10 @@ import * as ss from 'simple-statistics'
 export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
 
     useEffect(() =>{
+        var graphDiv = document.getElementById("graph")
         d3.selectAll('svg').remove()
         let height = window.innerHeight *.9;
-        let width = window.innerWidth *.7;
+        let width = graphDiv.clientWidth
         let spacing = window.innerWidth * (3/24)
 
         let x_min = d3.min(filteredPlayers, (d) => d[filter_one.org][filter_one.type]);
@@ -101,67 +102,67 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
             .style("text-anchor", "middle")
             .text(`${filter_two.org}-${filter_two.type} rating:`)
 
-            
-        // add toolip
-        // const tip =d3.select("body")
-        //     .append("div")
-        //     .attr("class","card")
-        //     .style("padding", "8px")
-        //     .style("position", "absolute")
-        //     .style("left", 0)
-        //     .style("top", 0)
-        //     .style("visibility", "hidden");
 
-        //     svg.selectAll('circle')
-        //         .on("mouseover", (e, d) => {
-        //             let content = `<div class='tooltip-label'>
-        //              ${filter_one.org}-${filter_one.type}: ${d[filter_one.org][filter_one.type]} <br/>
-        //              ${filter_two.org}-${filter_two.type}: ${d[filter_two.org][filter_two.type]}
-        //             </div>`;
-        //             tip.html(content).style("visibility", "visible")
-        //             handleMouseOver(e, d)
-        //         }).on("mouseout", (e, d) => {
-        //             tip.style("visibility", "hidden");
-        //             handleMouseOut(e, d);
-        //           })
-        //           .on("mousemove", (e, d) => {
-        //             tip.style("transform", `translate(${e.pageX}px,${e.pageY}px)`);
-        //           });
+        // add toolip
+        const tip =d3.select("body")
+            .append("div")
+            .attr("class","card")
+            .style("padding", "8px")
+            .style("position", "absolute")
+            .style("left", 0)
+            .style("top", 0)
+            .style("visibility", "hidden");
+
+            svg.selectAll('circle')
+                .on("mouseover", (e, d) => {
+                    let content = `<div class='tooltip-label'>
+                     ${filter_one.org}-${filter_one.type}: ${d[filter_one.org][filter_one.type]} <br/>
+                     ${filter_two.org}-${filter_two.type}: ${d[filter_two.org][filter_two.type]}
+                    </div>`;
+                    tip.html(content).style("visibility", "visible")
+                    handleMouseOver(e, d)
+                }).on("mouseout", (e, d) => {
+                    tip.style("visibility", "hidden");
+                    handleMouseOut(e, d);
+                  })
+                  .on("mousemove", (e, d) => {
+                    tip.style("transform", `translate(${e.pageX}px,${e.pageY}px)`);
+                  });
                 
-        //           svg.selectAll('path')
-        //           .on("mouseover", (e, d) => {
-        //               let x_value = Math.round(xScale.invert(e.pageX)-(spacing*2));
-        //               let y_value = Math.round(linearRegressionLine(x_value));
-        //               let content = `<div class='tooltip-label'>
-        //               ${filter_one.org}-${filter_one.type}: ${x_value}
-        //             <br/>
-        //             ${filter_two.org}-${filter_two.type}: ${y_value}
-        //               </div>`;
-        //               tip.html(content).style("visibility", "visible")
-        //               console.log(d)
-        //               handleMouseOver(e, d)
-        //           }).on("mouseout", (e, d) => {
-        //               tip.style("visibility", "hidden");
-        //               handleMouseOut(e, d);
-        //             })
-        //             .on("mousemove", (e, d) => {
-        //               tip.style("transform", `translate(${e.pageX}px,${e.pageY}px)`);
-        //             });
+                  svg.selectAll('path')
+                  .on("mouseover", (e, d) => {
+                      let x_value = Math.round(xScale.invert(e.pageX)-(spacing*2));
+                      let y_value = Math.round(linearRegressionLine(x_value));
+                      let content = `<div class='tooltip-label'>
+                      ${filter_one.org}-${filter_one.type}: ${x_value}
+                    <br/>
+                    ${filter_two.org}-${filter_two.type}: ${y_value}
+                      </div>`;
+                      tip.html(content).style("visibility", "visible")
+                      console.log(d)
+                      handleMouseOver(e, d)
+                  }).on("mouseout", (e, d) => {
+                      tip.style("visibility", "hidden");
+                      handleMouseOut(e, d);
+                    })
+                    .on("mousemove", (e, d) => {
+                      tip.style("transform", `translate(${e.pageX}px,${e.pageY}px)`);
+                    });
                   
         
-        //     const handleMouseOver = (e, d) =>{
-        //         d3.select(e.currentTarget)
-        //           .transition()
-        //           .duration(200)
-        //           .style("fill", "#334040");
-        //     }
+            const handleMouseOver = (e, d) =>{
+                d3.select(e.currentTarget)
+                  .transition()
+                  .duration(200)
+                  .style("fill", "#5FA19E");
+            }
           
-        //      const handleMouseOut = (e, d) => {
-        //     d3.select(e.currentTarget)
-        //       .transition()
-        //       .duration(300)
-        //       .style("fill", "#5FA19E");
-        //   };
+             const handleMouseOut = (e, d) => {
+            d3.select(e.currentTarget)
+              .transition()
+              .duration(300)
+              .style("fill", "#0b5ed7");
+          };
 
         // end tooltip
 
