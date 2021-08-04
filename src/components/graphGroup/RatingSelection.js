@@ -26,7 +26,7 @@ export default function RatingSelection({filterPlayers}) {
 
 
     return (
-        <div className='select'>
+        <div className='select center'>
             <h2 className='select' >Compare ratings for 
                 <span>
                     <Dropdown

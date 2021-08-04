@@ -1,7 +1,5 @@
 body{
-  background-image: url('./imgs/background.jpg');
-  background-repeat: no-repeat;
-  background-size: auto;
+  
   padding-bottom: 0;
 }
 
@@ -11,8 +9,8 @@ body{
   padding-bottom: 20px;
 }
 
-@media screen and (min-width: 480px){
-  .container{
+@media screen and (min-width: 900px){
+  .main-container{
     width: 75vw
   }
 
@@ -22,6 +20,30 @@ body{
 
   span.navbar-brand{
     font-size: 35px
+  }
+
+  #chessForm > *{
+    font-size: 20px
+  }
+
+  body{
+  background-image: url('./imgs/background.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  }
+}
+
+@media screen and (max-width: 899px){
+  .main-container{
+    width: 100vw;
+  }
+
+  nav > *{
+    font-size: 15px
+  }
+
+  span.navbar-brand{
+    font-size: 15px
   }
 
   #chessForm > *{
@@ -94,4 +116,6 @@ body{
   border-right: 5px solid black;
 }
 
-
+.center{
+  text-align: center;
+}
