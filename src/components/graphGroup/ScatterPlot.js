@@ -22,7 +22,6 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
         let combined_min=Math.floor(Math.min(x_min, y_min)/100)*100;
         let combined_max=Math.ceil(Math.max(x_max, y_max)/100)*100;
 
-        console.log(combined_max, combined_min)
 
         var svg = d3.select('#graph')
         .append("svg")
@@ -63,6 +62,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
        let linearRegression = ss.linearRegression(filteredPlayers.map(player => [player[filter_one.org][filter_one.type] , player[filter_two.org][filter_two.type]]))
 
 
+
        let linearRegressionLine = ss.linearRegressionLine(linearRegression)
 
        let finalPointX = Math.min(combined_max, (combined_max - linearRegression.b)/linearRegression.m)
@@ -71,6 +71,8 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
         let regressionPoints = [
             {x:startPointX,y: linearRegressionLine(startPointX)},
             {x:finalPointX,y:linearRegressionLine(finalPointX)}]
+
+
 
         let line=d3.line()
         .x(d => xScale(d.x))
