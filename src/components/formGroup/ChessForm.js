@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import MembershipForm from './MembershipForm'
 import axios from 'axios'
@@ -28,6 +28,29 @@ export default function ChessForm({players, setPlayers}) {
         setSubmitted(true)
 
     }
+
+    useEffect(()=>{
+        let count = 0
+        let submitButton = document.getElementById("submitButton")
+        let mustBe2 = document.getElementById("mustBe2")
+        for(var org in record){
+            console.log(record[org])
+            for(var type in record[org]){
+                console.log(record[org][type])
+                if(record[org][type] !== null){
+                    count++
+                }
+            }
+        }
+        console.log(count)
+        if(count > 1){
+            submitButton.disabled = false
+            mustBe2.style['display']='none'
+        } else if(count <= 1){
+            submitButton.disabled = true
+        }
+
+    },[record])
 
    
     
@@ -68,8 +91,9 @@ export default function ChessForm({players, setPlayers}) {
 
         {LiChess && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'classical', 'correspondence' , 'puzzle']} name='LiChess' record={record} setRecord={setRecord} />}
 
-        <Button type='submit'>Submit</Button>
+        <Button  type='submit' id='submitButton' disabled='true'>Submit</Button>
     </Form>)}
+    <p id='mustBe2'>you must fill in at least two ratings to submit a record</p>
     </div > 
     )
 }
