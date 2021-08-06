@@ -6,7 +6,7 @@ import * as ss from 'simple-statistics'
 
 
 
-export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
+export default function ScatterPlot({filteredPlayers, filter_one, filter_two, setCurrentLinearRegression}) {
 
     useEffect(() =>{
         var graphDiv = document.getElementById("graph")
@@ -62,6 +62,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two}) {
 
        let linearRegression = ss.linearRegression(filteredPlayers.map(player => [player[filter_one.org][filter_one.type] , player[filter_two.org][filter_two.type]]))
 
+       setCurrentLinearRegression(linearRegression)
 
 
        let linearRegressionLine = ss.linearRegressionLine(linearRegression)
