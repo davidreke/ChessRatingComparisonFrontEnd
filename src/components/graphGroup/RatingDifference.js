@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import * as ss from 'simple-statistics'
 
-export default function RatingDifference({label_one, label_two, avg_difference, standard_deviation, currentLinearRegression}) {
+export default function RatingDifference({label_one, label_two, standard_deviation, currentLinearRegression}) {
 
     const [currentNumber, SetCurrentNumber] = useState(0)
-    const higherOrLower = avg_difference > 0 ? <span className="higher"> higher </span> :<span className="lower"> lower </span>
+   
     
-    useEffect(()=>{console.log(avg_difference, standard_deviation)},[avg_difference, standard_deviation])
+    useEffect(()=>{console.log(standard_deviation)},[standard_deviation])
 
     const handleChange = (e) => {
         SetCurrentNumber(e.target.value)
@@ -19,10 +19,7 @@ export default function RatingDifference({label_one, label_two, avg_difference, 
             <span>{Math.round((currentLinearRegression.m*currentNumber)+currentLinearRegression.b)}</span> in {label_two} with an average devation of{' '+ Math.round(standard_deviation)+' '} points.</p>
 
 
-            {/* <p id='difference'>On average {label_one} is {Math.round(Math.abs(avg_difference))} points {higherOrLower} than {label_two}
-            
-             with a plus/minus of {Math.round(standard_deviation)} points.
-             </p> */}
+
         </div>
     )
 }

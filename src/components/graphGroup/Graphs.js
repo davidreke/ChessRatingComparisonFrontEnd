@@ -66,25 +66,16 @@ export default function Graphs({ players }) {
         setFilteredPlayers(newPlayers)
         console.log('new players: ', newPlayers);
 
-        // find average difference
-        let first_total = 0
-        let second_total = 0
-        for (let i = 0; i < newPlayers.length; i++) {
-            first_total += newPlayers[i][first_filter.org][first_filter.type]
-            second_total += newPlayers[i][second_Filter.org][second_Filter.type]
-        }
-        let first_avg = first_total / newPlayers.length;
-        let second_avg = second_total / newPlayers.length;
-        let difference = first_avg - second_avg
+
 
         // find standard variation
         let total_variance = 0
         for(let j = 0; j < newPlayers.length; j++) {
             total_variance += Math.abs(((newPlayers[j][first_filter.org][first_filter.type]*currentLinearRegression.m) +currentLinearRegression.b)-(newPlayers[j][second_Filter.org][second_Filter.type]))
         }
+        console.log(total_variance)
         let average_variance = total_variance/newPlayers.length
         console.log('avg variance: ',average_variance)
-        setAvg_difference(difference)
         setStandard_deviation(average_variance)
 
     }, [players])
