@@ -167,7 +167,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
 
         // end tooltip
 
-    }, [filteredPlayers, filter_one.type, filter_one.org, filter_two.org, filter_two.type])
+    }, [filteredPlayers, filter_one.type, filter_one.org, filter_two.org, filter_two.type,setCurrentLinearRegression ])
 
 
     return (
