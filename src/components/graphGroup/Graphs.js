@@ -31,7 +31,9 @@ const findKey = (rating_text) => {
         case 'FIDE: Standard':
             return { org: 'FIDE', type: 'standard' };
         case 'FIDE: Rapid':
-            return { org: 'FIDE', type: 'rapid' };
+            return { org: 'FIDE', type: 'standard' };
+        case 'FIDE: Blitz':
+            return { org: 'FIDE', type: 'blitz' };
         case 'USCF: Regular':
             return { org: 'USCF', type: 'regular' };
         case 'USCF: Quick':
