@@ -4,7 +4,7 @@ import * as ss from 'simple-statistics'
 export default function RatingDifference({label_one, label_two, avg_difference, standard_deviation, currentLinearRegression}) {
 
     const [currentNumber, SetCurrentNumber] = useState(0)
-    const higherOrLower = avg_difference > 0 ? <span className="higher"> higher </span> :<span className="lower"> lower </span>
+
     
     useEffect(()=>{console.log(avg_difference, standard_deviation)},[avg_difference, standard_deviation])
 
