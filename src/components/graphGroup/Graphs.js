@@ -4,7 +4,6 @@ import RatingSelection from './RatingSelection'
 import ScatterPlot from './ScatterPlot'
 import NoComparison from '../noData/NoComparison'
 import NoGraph from '../noData/NoGraph'
-import * as ss from 'simple-statistics'
 const findKey = (rating_text) => {
     switch (rating_text) {
         case 'Chess.com: Bullet':
@@ -48,7 +47,6 @@ export default function Graphs({ players }) {
     const [filteredPlayers, setFilteredPlayers] = useState([])
     const [label_one, setlabel_one] = useState(null)
     const [label_two, setlabel_two] = useState(null)
-    const [avg_difference, setAvg_difference] = useState(0)
     const [filter_one, setFilter_one] = useState({})
     const [filter_two, setFilter_two] = useState({})
     const [standard_deviation, setStandard_deviation]=useState(0)
@@ -102,7 +100,7 @@ export default function Graphs({ players }) {
             <RatingSelection comparisons={comparisons} setComparisons={setComparisons} filterPlayers={filterPlayers}  />
             {(filteredPlayers.length <= 0) && label_one && label_one && <NoComparison />}
             {label_one && label_two && (filteredPlayers.length > 0) &&
-                <RatingDifference label_one={label_one} label_two={label_two} avg_difference={avg_difference} standard_deviation={standard_deviation} currentLinearRegression={currentLinearRegression} />
+                <RatingDifference label_one={label_one} label_two={label_two}  standard_deviation={standard_deviation} currentLinearRegression={currentLinearRegression} />
             }
             {(filteredPlayers.length <= 1) && label_one && label_two && <NoGraph />}
             {label_one && label_two && (filteredPlayers.length > 1) &&
