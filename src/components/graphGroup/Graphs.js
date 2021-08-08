@@ -93,7 +93,7 @@ export default function Graphs({ players }) {
          console.log('avg variance: ',average_variance)
 
          setStandard_deviation(average_variance)
-    }, [filterPlayers, currentLinearRegression])
+    }, [filterPlayers, currentLinearRegression, filter_one.org, filter_one.type, filter_two.org, filter_two.type])
 
     return (
         <div>

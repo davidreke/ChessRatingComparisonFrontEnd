@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import * as ss from 'simple-statistics'
+
 
 export default function RatingDifference({label_one, label_two, avg_difference, standard_deviation, currentLinearRegression}) {
 
