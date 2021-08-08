@@ -57,8 +57,8 @@ export default function ChessForm({players, setPlayers}) {
         
     return (
        <div id='chessForm'> 
-        {(submitted === true) ? (<h2>Thank you for your submission</h2>): (<Form onSubmit={submitRecord}>
-        <p>Please fill out the below form</p>
+        {(submitted === true) ? (<h2>Thank you for your submission. Go to the Graphs section to see a comparison of each rating.</h2>): (<Form onSubmit={submitRecord}>
+        <p>Please fill out the below form to add your ratings to our data.</p>
         <Form.Group>
             <Form.Label className='mx-2'>Do you have a FIDE membership?</Form.Label>
             <Form.Check inline label='Yes' value={true} type='radio' className = 'mx-2' name='FIDE'  onClick = {()=>{setFide(true)}}/>

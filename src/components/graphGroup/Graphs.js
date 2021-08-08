@@ -1,9 +1,10 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import RatingDifference from './RatingDifference'
 import RatingSelection from './RatingSelection'
 import ScatterPlot from './ScatterPlot'
 import NoComparison from '../noData/NoComparison'
 import NoGraph from '../noData/NoGraph'
+import * as ss from 'simple-statistics'
 const findKey = (rating_text) => {
     switch (rating_text) {
         case 'Chess.com: Bullet':
@@ -50,6 +51,10 @@ export default function Graphs({ players }) {
     const [avg_difference, setAvg_difference] = useState(0)
     const [filter_one, setFilter_one] = useState({})
     const [filter_two, setFilter_two] = useState({})
+    const [standard_deviation, setStandard_deviation]=useState(0)
+    const [currentLinearRegression, setCurrentLinearRegression] =useState({})
+
+
     const filterPlayers = useCallback((rating_text_one, rating_text_two) => {
         setlabel_one(rating_text_one)
         setlabel_two(rating_text_two)
@@ -60,28 +65,48 @@ export default function Graphs({ players }) {
         let newPlayers = players.filter(player => (player[first_filter.org][first_filter.type] && player[second_Filter.org][second_Filter.type]))
         setFilteredPlayers(newPlayers)
         console.log('new players: ', newPlayers);
-        let first_total = 0
-        let second_total = 0
-        for (let i = 0; i < newPlayers.length; i++) {
-            first_total += newPlayers[i][first_filter.org][first_filter.type]
-            second_total += newPlayers[i][second_Filter.org][second_Filter.type]
-        }
-        let first_avg = first_total / newPlayers.length;
-        let second_avg = second_total / newPlayers.length;
-        let difference = first_avg - second_avg
-        setAvg_difference(difference)
+
+        // find average difference
+        // let first_total = 0
+        // let second_total = 0
+        // for (let i = 0; i < newPlayers.length; i++) {
+        //     first_total += newPlayers[i][filter_one.org][filter_one.type]
+        //     second_total += newPlayers[i][filter_two.org][filter_two.type]
+        // }
+        // let first_avg = first_total / newPlayers.length;
+        // let second_avg = second_total / newPlayers.length;
+        // let difference = first_avg - second_avg
 
     }, [players])
+
+    useEffect(()=>{
+        
+         // find standard variation
+         let total_variance = 0
+         for(let j = 0; j < filteredPlayers.length; j++) {
+             console.log(currentLinearRegression )
+             let calcuated_number =  (filteredPlayers[j][filter_one.org][filter_one.type]*currentLinearRegression.m) +currentLinearRegression.b
+             let actual_number=filteredPlayers[j][filter_two.org][filter_two.type]
+             console.log('calculated: ', calcuated_number, 'actual: ', actual_number)
+             total_variance += Math.abs(calcuated_number-actual_number)
+         }
+         console.log("total variance:",total_variance)
+         let average_variance = total_variance/filteredPlayers.length
+         console.log('avg variance: ',average_variance)
+
+         setStandard_deviation(average_variance)
+    }, [filterPlayers, currentLinearRegression])
+
     return (
         <div>
-            <RatingSelection comparisons={comparisons} setComparisons={setComparisons} filterPlayers={filterPlayers} />
+            <RatingSelection comparisons={comparisons} setComparisons={setComparisons} filterPlayers={filterPlayers}  />
             {(filteredPlayers.length <= 0) && label_one && label_one && <NoComparison />}
             {label_one && label_two && (filteredPlayers.length > 0) &&
-                <RatingDifference label_one={label_one} label_two={label_two} avg_difference={avg_difference} />
+                <RatingDifference label_one={label_one} label_two={label_two} avg_difference={avg_difference} standard_deviation={standard_deviation} currentLinearRegression={currentLinearRegression} />
             }
             {(filteredPlayers.length <= 1) && label_one && label_two && <NoGraph />}
             {label_one && label_two && (filteredPlayers.length > 1) &&
-                <ScatterPlot filteredPlayers={filteredPlayers} filter_one={filter_one} filter_two={filter_two} />
+                <ScatterPlot filteredPlayers={filteredPlayers} filter_one={filter_one} filter_two={filter_two} setCurrentLinearRegression={setCurrentLinearRegression}  />
             }
         </div>
     )
