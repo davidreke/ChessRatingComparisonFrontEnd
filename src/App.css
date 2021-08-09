@@ -39,6 +39,7 @@ body{
 @media screen and (max-width: 899px){
   .main-container{
     width: 100vw;
+    padding: 0;
   }
 
   nav > *{
