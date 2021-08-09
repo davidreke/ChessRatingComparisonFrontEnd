@@ -57,6 +57,10 @@ body{
   #aboutMeImg{
     display: none;
   }
+
+  p{
+    margin: .75em;
+  }
 }
 
 .fade-in{

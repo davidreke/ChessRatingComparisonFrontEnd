@@ -13,7 +13,8 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
         d3.selectAll('svg').remove()
         let height = window.innerHeight *.9;
         let width = graphDiv.clientWidth
-        let spacing = window.innerWidth * (3/24)
+        let spacing = 160
+        // let spacing = window.innerWidth * (3/24)
 
         let x_min = d3.min(filteredPlayers, (d) => d[filter_one.org][filter_one.type]);
         let x_max = d3.max(filteredPlayers, (d) => d[filter_one.org][filter_one.type]);

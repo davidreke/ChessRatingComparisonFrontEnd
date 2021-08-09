@@ -42,7 +42,7 @@ export default function ChessForm({players, setPlayers}) {
                 }
             }
         }
-        console.log(count)
+
         if(count > 1){
             submitButton.disabled = false
             mustBe2.style['display']='none'
