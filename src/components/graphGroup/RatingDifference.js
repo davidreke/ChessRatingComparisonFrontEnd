@@ -13,7 +13,7 @@ export default function RatingDifference({label_one, label_two, standard_deviati
 
     return (
         <div className='fade-in difference center'>
-            <p>A rating of <input id='find-my-rating' type='number' onChange={handleChange}/> in {label_one} would equal{' '} 
+            <p>A rating of <input id='find-my-rating' type='number' onChange={handleChange} defaultValue={1500}/> in {label_one} would equal{' '} 
             
             <span>{Math.round((currentLinearRegression.m*currentNumber)+currentLinearRegression.b)}</span> in {label_two} with an average variation of plus/minus{' '+ Math.round(standard_deviation)+' '} points.</p>
 
