@@ -15,7 +15,7 @@ export default function About() {
                 <Row md>
                     <Col id='right-about-box' md>
                     <h2>About Me</h2>
-                    <p>My name is David Reke. I am chess player and developer in the Cincinnati. This website is very new, so if you encounter any issues please let me know from one of the below accounts.</p>
+                    <p>My name is David Reke. I am chess player and developer in Cincinnati. This website is very new, so if you encounter any issues, please let me know from one of the below accounts.</p>
 
                     <h3>Lets Connect!</h3>
                     <ul>
