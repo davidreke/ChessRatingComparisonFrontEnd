@@ -81,7 +81,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
         .x(d => xScale(d.x))
         .y(d => yScale(d.y))
 
-        svg.append('path')
+        var theRegressionLine=svg.append('path')
             .classed('regressionLine', true)
             .datum(regressionPoints)
             .attr('d', line)
@@ -131,9 +131,10 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
                     tip.style("transform", `translate(${e.pageX}px,${e.pageY}px)`);
                   });
                 
-                  svg.selectAll('path')
+                  theRegressionLine
                   .on("mouseover", (e, d) => {
-                      let x_value = Math.round(xScale.invert(e.pageX)-(spacing*2));
+                      console.log(svg.node().getBoundingClientRect())
+                      let x_value = Math.round(xScale.invert(e.pageX-svg.node().getBoundingClientRect().x)-(spacing));
                       let y_value = Math.round(linearRegressionLine(x_value));
                       let content = `<div class='tooltip-label'>
                       ${filter_one.org}-${filter_one.type}: ${x_value}
