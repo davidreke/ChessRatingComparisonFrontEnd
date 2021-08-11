@@ -28,6 +28,7 @@ export default function App() {
         <Router>
         <Container className='main-container'>
         <Header />
+        <hr/>
         <Switch>
           <Route path="/Graphs">
             <Graphs players={players} />

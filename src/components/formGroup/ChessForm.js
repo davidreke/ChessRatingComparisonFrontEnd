@@ -66,6 +66,7 @@ export default function ChessForm({players, setPlayers}) {
         </Form.Group>
 
         {FIDE && <MembershipForm inputs={['standard', 'rapid', 'blitz']} name='FIDE'  record={record} setRecord={setRecord} />}
+        <hr/>
 
         <Form.Group>
             <Form.Label className = 'mx-2'>Do you have a USCF membership?</Form.Label>
@@ -74,6 +75,7 @@ export default function ChessForm({players, setPlayers}) {
         </Form.Group>
 
         {USCF && <MembershipForm inputs={['regular', 'quick', 'blitz']} name='USCF' record={record} setRecord={setRecord} />}
+        <hr/>
 
         <Form.Group>
             <Form.Label className = 'mx-2'>Do you have a Chess.com account?</Form.Label>
@@ -82,6 +84,7 @@ export default function ChessForm({players, setPlayers}) {
         </Form.Group>
 
         {Chesscom && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'daily', 'puzzle']} name='ChessCom'  record={record} setRecord={setRecord}/>}
+        <hr/>
 
         <Form.Group>
             <Form.Label className = 'mx-2'>Do you have a LiChess account?</Form.Label>
@@ -90,6 +93,7 @@ export default function ChessForm({players, setPlayers}) {
         </Form.Group>
 
         {LiChess && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'classical', 'correspondence' , 'puzzle']} name='LiChess' record={record} setRecord={setRecord} />}
+        <hr/>
 
         <Button  type='submit' id='submitButton' disabled='true'>Submit</Button>
     </Form>)}
