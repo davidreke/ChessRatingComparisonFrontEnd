@@ -19,14 +19,14 @@ export default function Header() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-end me-auto container-fluid">   
-                <Nav.Link  className='ml-auto' href="/" className={`${splitLocation[1] === "" ? "active" : ""} ml-auto`}>
+                <Nav.Link  href="/" className={`${splitLocation[1] === "" ? "active" : ""} ml-auto`}>
                     {/* <Link to="/">Form</Link> */}
                     Add Your Ratings
                 </Nav.Link>
-                <Nav.Link className='ml-auto' href="/Graphs"  className={`${splitLocation[1] === "Graphs" ? "active" : ""} ml-auto`}>
+                <Nav.Link href="/Graphs"  className={`${splitLocation[1] === "Graphs" ? "active" : ""} ml-auto`}>
                    Compare Ratings
                 </Nav.Link> 
-                <Nav.Link className='ml-auto' href="/About"  className={`${splitLocation[1] === "About" ? "active" : ""} ml-auto`}>
+                <Nav.Link  href="/About"  className={`${splitLocation[1] === "About" ? "active" : ""} ml-auto`}>
                     Updates
                 </Nav.Link>                
             </Nav>
