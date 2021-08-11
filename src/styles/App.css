@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url("./HeaderStyles.css");
 body{
   
   padding-bottom: 0;
@@ -17,20 +20,13 @@ body{
     width: 75vw
   }
 
-  nav > *{
-    font-size: 35px
-  }
-
-  span.navbar-brand{
-    font-size: 35px
-  }
 
   #chessForm > *{
     font-size: 20px
   }
 
   body{
-  background-image: url('./imgs/background.jpg');
+  background-image: url('../imgs/background.jpg');
   background-repeat: no-repeat;
   background-size: auto;
   }
@@ -42,13 +38,6 @@ body{
     padding: 0;
   }
 
-  nav > *{
-    font-size: 15px
-  }
-
-  span.navbar-brand{
-    font-size: 15px
-  }
 
   #chessForm > *{
     font-size: 20px
@@ -133,3 +122,8 @@ body{
 #find-my-rating{
   width: 3.5em;
 }
+
+*{
+  font-family: Roboto;
+}
+
