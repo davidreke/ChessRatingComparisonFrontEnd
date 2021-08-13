@@ -11,10 +11,13 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
     useEffect(() =>{
        
         d3.selectAll('#graph>*').remove()
- 
-        let height = window.innerHeight *.9;
         let width = document.getElementById("graph").clientWidth
+        let height = Math.min(window.innerHeight *.9, width );
+        
         let spacing = 160
+        if(width < 400){
+            spacing =20
+        }
         // let spacing = window.innerWidth * (3/24)
 
         let x_min = d3.min(filteredPlayers, (d) => d[filter_one.org][filter_one.type]);
@@ -95,20 +98,23 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
         
 
         // add axis titles
+        if(width > 400){
+      
         svg.append("text")
-            .attr('transform', `translate(${(width/2)-spacing} , ${height - (spacing *.7 )})`)
-            .style("rext-anchor", "middle")
-            .text(`${filter_one.org}-${filter_one.type} rating:`)
-            .classed("svgScatterPlot", true);
+        .attr('transform', `translate(${(width/2)-spacing} , ${height - (spacing *.7 )})`)
+        .style("rext-anchor", "middle")
+        .text(`${filter_one.org}-${filter_one.type} rating:`)
+        .classed("svgScatterPlot", true);
 
-        svg.append("text")
-            .attr("transform", "rotate(-90)")
-            .attr('y', (0-spacing)*(2/5))
-            .attr('x', 0 - height/2 + (spacing/2))
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .text(`${filter_two.org}-${filter_two.type} rating:`)
-            .classed("svgScatterPlot", true);
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr('y', (0-spacing)*(2/5))
+        .attr('x', 0 - height/2 + (spacing/2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text(`${filter_two.org}-${filter_two.type} rating:`)
+        .classed("svgScatterPlot", true);
+        }
 
 
         // add toolip
