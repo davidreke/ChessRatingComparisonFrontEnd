@@ -60,8 +60,8 @@
       color: #777777;
   }
 
-  .difference > p > input{
-      width: 70px;
+  #find-my-rating{
+      width:4.5em;
       height: 34px;
       border-radius: 3px;
       font-weight: 500
