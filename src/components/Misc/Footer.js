@@ -9,7 +9,7 @@ export default function Footer() {
             <div id='footer-text'>
                 <p>Made with{' '}
                     <span>
-                        <img src={heart}></img>
+                        <img src={heart} alt='site author'></img>
                     </span>
                     {' '}by David Reke</p>
                 <p>
