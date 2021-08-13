@@ -13,7 +13,7 @@ export default function Footer() {
                     </span>
                     {' '}by David Reke</p>
                 <p>
-                    <span><a href='www.linkedin.com/in/david-reke-16129418'>LinkedIn</a></span>{' '}|{' '}
+                    <span><a href='https://www.linkedin.com/in/david-reke-16129418/'>LinkedIn</a></span>{' '}|{' '}
                     <span><a href='https://www.chess.com/member/daviddoeschess'>Chess.com </a></span>{' '}|{' '}
                     <span><a href='https://lichess.org/@/DavidDoesChess'>LiChess.org</a></span>{' '}|{' '}
                 </p>
