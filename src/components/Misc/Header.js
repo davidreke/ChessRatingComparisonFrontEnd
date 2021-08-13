@@ -20,7 +20,6 @@ export default function Header() {
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-end me-auto container-fluid">   
                 <Nav.Link  href="/" className={`${splitLocation[1] === "" ? "active" : ""} ml-auto`}>
-                    {/* <Link to="/">Form</Link> */}
                     Add Your Ratings
                 </Nav.Link>
                 <Nav.Link href="/Graphs"  className={`${splitLocation[1] === "Graphs" ? "active" : ""} ml-auto`}>

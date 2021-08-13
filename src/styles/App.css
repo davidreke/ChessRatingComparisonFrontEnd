@@ -1,35 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("./Header.css");
+@import url("./Form.css");
+@import url("./Comparison.css");
+@import url("./Footer.css");
+@import url("./Updates.css");
 
-@import url("./HeaderStyles.css");
 body{
-  
   padding-bottom: 0;
 }
 
 .container.main-container{
   background-color: white;
   min-height: 100vh;
-  padding-bottom: 20px;
+  padding: 40px;  
 }
 
 @media screen and (min-width: 900px){
   #right-about-box{
     border-right: 5px solid black;
   }
-  .main-container{
-    width: 75vw
-  }
 
-
-  #chessForm > *{
-    font-size: 20px
-  }
-
-  body{
-  background-image: url('../imgs/background.jpg');
-  background-repeat: no-repeat;
-  background-size: auto;
-  }
 }
 
 @media screen and (max-width: 899px){
@@ -39,18 +29,21 @@ body{
   }
 
 
-  #chessForm > *{
-    font-size: 20px
-  }
-
   #aboutMeImg{
     display: none;
   }
 
-  p{
-    margin: .75em;
-  }
+
 }
+
+@media screen and (max-width: 350px){
+  .container.main-container{
+    width: 100vw;
+    padding: 20px;
+  }
+
+}
+
 
 .fade-in{
   animation: fadeIn linear 1s;
@@ -62,51 +55,11 @@ body{
   100% {opacity:1;}
 }
 
-.question, .ratingInput{
-  margin-left: 40px;
-}
 
 .inline-drop{
   display: inline-block
 }
 
-.select h2, button.selector{
-  font-size: 2rem important!
-}
-
-
-.higher{
-  color: green;
-}
-
-.lower{
-  color: red;
-}
-
-.lower, .higher {
-  font-weight: 750;
-}
-
-.difference > *{
-  font-size: 20px
-}
-
-.difference {
-  margin-top: 2.5vh
-}
-
-.dropdown-toggle{
-  margin: 1em;
-}
-
-.noData{
-  font-size: 20px;
-  color: red;
-}
-
-#difference{
-  margin-bottom: 0;
-}
 
 #aboutMeImg{
   height: auto;
@@ -119,9 +72,7 @@ body{
   text-align: center;
 }
 
-#find-my-rating{
-  width: 3.5em;
-}
+
 
 *{
   font-family: Roboto;
@@ -129,6 +80,6 @@ body{
 
 hr{
   color: #D1D2D4;
-  height: 1px;
+  height: 2px !important;
 }
 

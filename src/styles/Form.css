@@ -1,0 +1,62 @@
+.question, .question > *{
+    font-size: 18px;
+    color: #777777;
+    line-height: 21px;
+}
+
+#chessForm > #mustBe2{
+    color: red;
+}
+
+#chessForm > h1 {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 120%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+#chessFormH2 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 28px;
+}
+
+.question, .ratingInput{
+    margin-left: 40px;
+  }
+
+  .form-rating-input {
+      display: inline ;
+      margin-left: 20px;
+      width: 5em ;
+      border-radius: 3px;
+      border: 1px solid #D1D2D4;
+  }
+
+  @media screen and (max-width: 350px){
+    .question, .question > *{
+        font-size: 12px;
+        color: black;
+    }
+
+    #chessForm > h1 {
+        font-size: 18px;
+    }
+    
+    #chessFormH2 {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 28px;
+        margin-bottom: 28px;
+    }
+
+    .form-rating-input {
+        display: block;
+        margin-left: 20px;
+        width: 90% ;
+    }
+
+  }
+  

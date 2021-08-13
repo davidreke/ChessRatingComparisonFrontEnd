@@ -1,0 +1,52 @@
+#footer{
+    height: 174px;
+    background-color: #231E20;
+}
+
+
+
+#footer > img {
+    width: 92px;
+    height: 100px;
+    margin: 40px 10px 40px 40px;
+    border-radius: 50%;
+    float: left;
+}
+
+
+
+#footer-text{
+    margin: 40px 40px auto 32px;
+    float: left;
+}
+
+
+#footer-text > p {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+   
+}
+
+#footer-text > p > span > a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer-text > p > span > a:hover {
+    text-decoration: underline;
+    color: #0275d8;
+}
+
+#footer-text > p > span > img {
+    height: 18px;
+}
+
+@media screen and (max-width: 400px){
+  #footer{
+      display:none;
+  }
+  
+  
+}

@@ -26,15 +26,16 @@ export default function RatingSelection({filterPlayers}) {
 
 
     return (
-        <div className='select center'>
-            <h2 className='select' >Compare ratings for 
-                <span>
+        <div className='select'>
+            <h1 className='selecth1'>Let's see how your ratings stack up.</h1>
+            <h2 className='selecth2' > <span className='break'>Compare ratings for </span>
+                <span className='break'>
                     <Dropdown
                     className='selector inline-drop'
                     isOpen={firstOpen}
                     toggle={firstOpen}
                     >
-                         <Dropdown.Toggle variant="primary" id="dropdown-basic" size='sm'>
+                         <Dropdown.Toggle variant="light" id="dropdown-basic" size='sm'className='selectButton' >
                             {firstOption}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
@@ -95,15 +96,16 @@ export default function RatingSelection({filterPlayers}) {
 
                     </Dropdown>
                 </span> 
-                and 
-                <span >
+                <span className='break'>and </span>
+                <span className='break'>
                     <Dropdown
                     className='inline-drop selector'
                     isOpen={secondOpen}
                     toggle={secondOpen}
                     size="lg"
+            
                     >
-                         <Dropdown.Toggle variant="primary" id="dropdown-basic" size='sm'>
+                         <Dropdown.Toggle variant="light" id="dropdown-basic" size='sm' className='selectButton'>
                             {secondOption}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
