@@ -163,7 +163,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
                 d3.select(e.currentTarget)
                   .transition()
                   .duration(200)
-                  .style("fill", "#5FA19E");
+                  .style("fill", "red");
             }
           
              const handleMouseOut = (e, d) => {
