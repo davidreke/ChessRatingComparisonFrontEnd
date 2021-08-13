@@ -58,7 +58,7 @@ export default function ChessForm({players, setPlayers}) {
     return (
        <div id='chessForm'> 
        <h1>We use submitted player data to compare ratings across chess sites and organizations.</h1>
-        {(submitted === true) ? (<h2>Thank you for your submission. Go to the Graphs section to see a comparison of each rating.</h2>): (<Form onSubmit={submitRecord}>
+        {(submitted === true) ? (<h2>Thank you for your submission. Go to the <Link t='/graphs'>Graphs section</Link> to see a comparison of each rating.</h2>): (<Form onSubmit={submitRecord}>
         <h2 id='chessFormH2'>Add your ratings to our data and <Link to='/graphs'>start comparing</Link>.</h2>
         <Form.Group>
             <Form.Label className='mx-2 question'>Do you have a FIDE membership?</Form.Label>
