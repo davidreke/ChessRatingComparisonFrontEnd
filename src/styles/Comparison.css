@@ -1,0 +1,88 @@
+.difference > *{
+    font-size: 20px
+  }
+  
+  .difference {
+    margin-top: 2.5vh
+  }
+  
+  .dropdown-toggle{
+    margin: 1em;
+  }
+
+  .noData{
+    font-size: 20px;
+    color: red;
+  }
+  
+  #difference{
+    margin-bottom: 0;
+  }
+  
+  .selecth1{
+      font-weight: 700;
+      font-size:36px;
+      line-height: 120%;
+      margin-top: 36px;
+      margin-bottom: 32px
+  }
+
+  .selecth2{
+    margin-bottom: 28px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28.13px;
+    letter-spacing: -0.01em;
+  }
+
+  .selectButton {
+      width: 200px;
+      height: 40px;
+      border: 1px solid #D1D2D4;
+      border-radius: 3px;
+      color: #231E20;
+      font-weight: 500;
+      background: #FFFFFF;
+      font-size: 14px;
+      line-height: 16px;
+  }
+
+  .difference{
+      margin-top: 28px;
+      margin-bottom: 22px;
+  }
+
+  .difference > p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: -0.01em;
+      color: #777777;
+  }
+
+  .difference > p > input{
+      width: 70px;
+      height: 34px;
+      border-radius: 3px;
+      font-weight: 500
+  }
+
+  .difference > p > span.bold-text{
+    color: black;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 390px){
+    .select > h1 {
+      font-size: 25px;
+    }
+
+    .select > h2{
+      font-size: 20px
+    }
+
+    span.break{
+      display: block;
+      text-align: center;
+    }
+  }

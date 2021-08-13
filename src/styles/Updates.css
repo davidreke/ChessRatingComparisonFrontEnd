@@ -1,0 +1,39 @@
+#about > h2{
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 24px !important;
+    font-weight: 700;
+    font-size: 36px;
+    line-height:  120%;
+    letter-spacing: -0.01em;
+    color: #231E20;
+}
+
+.update-title{
+    margin-top: 24px;
+    margin-left: 40px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%
+}
+
+.update-date{
+    margin-left: 40px;
+    margin-bottom: 16px;
+    color: #777777;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+}
+
+.update-body{
+    margin-top: 16px;
+    margin-left: 40px;
+    margin-bottom: 24px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+}

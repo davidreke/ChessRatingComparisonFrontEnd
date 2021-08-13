@@ -6,11 +6,26 @@
       color: black;
     }
   
-    /* span.navbar-brand{
-      font-size: 15px
-    } */
 
 
+
+  }
+
+  @media screen and (max-width: 390px){
+
+    .navbar-brand> div >svg{
+      width: 100%;
+    }
+    .navbar-brand{
+      width: 60%
+    }
+  }
+
+  @media screen and (max-width: 310px){
+    .navbar-brand{
+      width: 60% !important;
+      margin: 1px;
+    }
   }
 
 
@@ -24,6 +39,7 @@
       color: white !important;
       background-color: #231E20;
       border-radius: 3px;
+      text-decoration: none;
   }
 
 nav{

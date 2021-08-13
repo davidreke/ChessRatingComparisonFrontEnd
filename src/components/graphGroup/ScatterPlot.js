@@ -9,10 +9,11 @@ import * as ss from 'simple-statistics'
 export default function ScatterPlot({filteredPlayers, filter_one, filter_two, setCurrentLinearRegression}) {
 
     useEffect(() =>{
-        var graphDiv = document.getElementById("graph")
-        d3.selectAll('svg').remove()
+       
+        d3.selectAll('#graph>*').remove()
+ 
         let height = window.innerHeight *.9;
-        let width = graphDiv.clientWidth
+        let width = document.getElementById("graph").clientWidth
         let spacing = 160
         // let spacing = window.innerWidth * (3/24)
 
@@ -32,6 +33,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
         .append("g")
         .attr("transform", `translate(${spacing/2}, ${spacing/2})`)
         .attr("style", "outlide: solid black")
+        .classed("svgScatterPlot", true);
 
      
         var xScale= d3.scaleLinear()
@@ -47,17 +49,18 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
         var yAxis = d3.axisLeft(yScale)
             .ticks(5);
 
-        svg.append("g").attr("transform", `translate(0,${height-spacing})`).call(xAxis);
-        svg.append("g").call(yAxis);
+        svg.append("g").attr("transform", `translate(0,${height-spacing})`).call(xAxis).classed("svgScatterPlot", true);;
+        svg.append("g").call(yAxis).classed("svgScatterPlot", true);;
 
         var points = svg.append("g")
-            .selectAll("dot").data(filteredPlayers)
+            .selectAll("dot").data(filteredPlayers).classed("svgScatterPlot", true);
         
         points.enter().append("circle")
             .attr("cx", (d) => xScale(d[filter_one.org][filter_one.type]))
             .attr("cy", (d)=>yScale(d[filter_two.org][filter_two.type]))
             .attr("r",3.5)
             .style('fill', '#0b5ed7')
+            .classed("svgScatterPlot", true);
 
         // add line of fit
 
@@ -88,6 +91,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
             .attr('fill',"none")
             .attr('stroke', '#0b5ed7')
             .attr("stroke-width", "3")
+            .classed("svgScatterPlot", true);
         
 
         // add axis titles
@@ -95,6 +99,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
             .attr('transform', `translate(${(width/2)-spacing} , ${height - (spacing *.7 )})`)
             .style("rext-anchor", "middle")
             .text(`${filter_one.org}-${filter_one.type} rating:`)
+            .classed("svgScatterPlot", true);
 
         svg.append("text")
             .attr("transform", "rotate(-90)")
@@ -103,6 +108,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
             .attr("dy", "1em")
             .style("text-anchor", "middle")
             .text(`${filter_two.org}-${filter_two.type} rating:`)
+            .classed("svgScatterPlot", true);
 
 
         // add toolip

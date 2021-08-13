@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import MembershipForm from './MembershipForm'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 
 export default function ChessForm({players, setPlayers}) {
     const [FIDE, setFide] = useState(false)
@@ -57,41 +57,46 @@ export default function ChessForm({players, setPlayers}) {
         
     return (
        <div id='chessForm'> 
+       <h1>We use submitted player data to compare ratings across chess sites and organizations.</h1>
         {(submitted === true) ? (<h2>Thank you for your submission. Go to the Graphs section to see a comparison of each rating.</h2>): (<Form onSubmit={submitRecord}>
-        <p>Please fill out the below form to add your ratings to our data.</p>
+        <h2 id='chessFormH2'>Add your ratings to our data and <Link to='/graphs'>start comparing</Link>.</h2>
         <Form.Group>
-            <Form.Label className='mx-2'>Do you have a FIDE membership?</Form.Label>
+            <Form.Label className='mx-2 question'>Do you have a FIDE membership?</Form.Label>
             <Form.Check inline label='Yes' value={true} type='radio' className = 'mx-2' name='FIDE'  onClick = {()=>{setFide(true)}}/>
             <Form.Check inline label='No' value ={false} name='FIDE'  type='radio' className = 'mx-2' defaultChecked  onClick={()=>{setFide(false)}}  />
         </Form.Group>
 
         {FIDE && <MembershipForm inputs={['standard', 'rapid', 'blitz']} name='FIDE'  record={record} setRecord={setRecord} />}
+        <hr/>
 
         <Form.Group>
-            <Form.Label className = 'mx-2'>Do you have a USCF membership?</Form.Label>
+            <Form.Label className = 'mx-2 question'>Do you have a USCF membership?</Form.Label>
             <Form.Check inline label='Yes' name='USCF' type='radio' className = 'mx-2'  onClick={()=>{setUSCF(true)}} />
             <Form.Check inline label='No' name='USCF'  type='radio' className = 'mx-2' defaultChecked onClick={()=>{setUSCF(false)}} />
         </Form.Group>
 
         {USCF && <MembershipForm inputs={['regular', 'quick', 'blitz']} name='USCF' record={record} setRecord={setRecord} />}
+        <hr/>
 
         <Form.Group>
-            <Form.Label className = 'mx-2'>Do you have a Chess.com account?</Form.Label>
+            <Form.Label className = 'mx-2 question'>Do you have a Chess.com account?</Form.Label>
             <Form.Check inline label='Yes' name='Chesscom' type='radio' className = 'mx-2' onClick={()=>{setChesscom(true)}}/>
             <Form.Check inline label='No' name='Chesscom'  type='radio' className = 'mx-2' defaultChecked onClick={()=>{setChesscom(false)}}/>
         </Form.Group>
 
         {Chesscom && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'daily', 'puzzle']} name='ChessCom'  record={record} setRecord={setRecord}/>}
+        <hr/>
 
         <Form.Group>
-            <Form.Label className = 'mx-2'>Do you have a LiChess account?</Form.Label>
+            <Form.Label className = 'mx-2 question'>Do you have a LiChess account?</Form.Label>
             <Form.Check inline label='Yes' name='LiChess' type='radio' className = 'mx-2' onClick={()=>{setLiChess(true)}} />
             <Form.Check inline label='No' name='LiChess'  type='radio' className = 'mx-2' defaultChecked onClick={()=>{setLiChess(false)}} />
         </Form.Group>
 
         {LiChess && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'classical', 'correspondence' , 'puzzle']} name='LiChess' record={record} setRecord={setRecord} />}
+        <hr/>
 
-        <Button  type='submit' id='submitButton' disabled='true'>Submit</Button>
+        <Button variant='dark' type='submit' id='submitButton' disabled='true'>Submit</Button>
     </Form>)}
     <p id='mustBe2'>you must fill in at least two ratings to submit a record</p>
     </div > 

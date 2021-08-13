@@ -1,5 +1,5 @@
 import React from 'react'
-import {Form, Container, Row, Col} from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
 
 
 export default function RatingInput({input,name, setRecord , record}) {
@@ -10,16 +10,18 @@ export default function RatingInput({input,name, setRecord , record}) {
         setRecord(newRecord)
     }
     return (
-        <Container className='fade-in ratingInput'>
-            <Row>
-            
-                <Col md="auto"><Form.Label inline>What is your {input} rating?</Form.Label></Col>
-                <Col><Form.Control type='number' min={500} max={3200} className='w-50 h-75' onChange={updateRecord} /></Col>
-            </Row>
+
+
+      
             <Form.Group>
+        
+            
+                <Form.Label inline>What is your {input} rating?{' '}</Form.Label>
+                <input type='number' min={500} max={3200} className='form-rating-input' onChange={updateRecord} />
+          
+            
             
         </Form.Group>
-        </Container>
         
     )
 }

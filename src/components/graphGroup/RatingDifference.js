@@ -12,10 +12,17 @@ export default function RatingDifference({label_one, label_two, standard_deviati
     }
 
     return (
-        <div className='fade-in difference center'>
-            <p>A rating of <input id='find-my-rating' type='number' onChange={handleChange} defaultValue={currentNumber}/> in {label_one} would equal{' '} 
-            
-            <span>{Math.round((currentLinearRegression.m*currentNumber)+currentLinearRegression.b)}</span> in {label_two} with an average variation of plus/minus{' '+ Math.round(standard_deviation)+' '} points.</p>
+        <div className='fade-in difference'>
+            <hr />
+            <p>
+                <span className='break'>A rating of</span> 
+                <span className='break bold-text'><input id='find-my-rating' type='number' onChange={handleChange} defaultValue={currentNumber}/></span>
+                <span className='break'>in {label_one} would equal{' '} </span> 
+                
+                <span className='break bold-text'>{Math.round((currentLinearRegression.m*currentNumber)+currentLinearRegression.b)}</span> 
+                <span className='break'>in {label_two} with an average variation of</span> 
+                <span className='break bold-text'> plus/minus of{' '+ Math.round(standard_deviation)+' '} points.</span>
+            </p>
 
 
 

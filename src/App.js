@@ -8,7 +8,8 @@ import {
 import ChessForm from './components/formGroup/ChessForm'
 import Graphs from './components/graphGroup/Graphs'
 import About from './components/About/About'
-import {Container} from 'react-bootstrap'
+import Footer from './components/Misc/Footer'
+import {Container, Row, Col} from 'react-bootstrap'
 import axios from 'axios'
 
 export default function App() {
@@ -24,11 +25,14 @@ export default function App() {
 }, [])
  
     return (
-      <div>
-        <Router>
-        <Container className='main-container'>
+      <>
+      <Router>
+      <Switch>
+      <Container className='main-container'>
         <Header />
-        <Switch>
+        <hr/>
+        <Row>
+          <Col >
           <Route path="/Graphs">
             <Graphs players={players} />
           </Route>
@@ -38,11 +42,17 @@ export default function App() {
           <Route  path="/about">
             <About   />
           </Route>
-        </Switch>
-        </Container>
+          </Col >
+          <Col md="auto" >
+          
+          </Col>
+        </Row>
         
-        </Router>
-      </div>
+      </Container>
+      </Switch>
+      </Router>
+      <Footer />
+      </>
     )
 }
 
