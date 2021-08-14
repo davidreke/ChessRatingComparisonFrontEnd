@@ -140,7 +140,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
                     handleMouseOut(e, d);
                   })
                   .on("mousemove", (e, d) => {
-                    tip.style("transform", `translate(${e.pageX}px,${e.pageY}px)`);
+                    tip.style("transform", `translate(${e.pageX +7}px,${e.pageY + 7}px)`);
                   });
                 
                   theRegressionLine
@@ -154,14 +154,13 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
                     ${filter_two.org}-${filter_two.type}: ${y_value}
                       </div>`;
                       tip.html(content).style("visibility", "visible")
-                      console.log(d)
                       handleMouseOver(e, d)
                   }).on("mouseout", (e, d) => {
                       tip.style("visibility", "hidden");
                       handleMouseOut(e, d);
                     })
                     .on("mousemove", (e, d) => {
-                      tip.style("transform", `translate(${e.pageX}px,${e.pageY}px)`);
+                      tip.style("transform", `translate(${e.pageX +7}px,${e.pageY +7}px)`);
                     });
                   
         
