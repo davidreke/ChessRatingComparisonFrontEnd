@@ -61,7 +61,7 @@ export default function ChessForm({players, setPlayers}) {
         {(submitted === true) ? (<h2>Thank you for your submission. Go to the <Link to='/graphs'>Graphs section</Link> to see a comparison of each rating.</h2>): (<Form onSubmit={submitRecord}>
         <h2 id='chessFormH2'>Add your ratings to our data and <Link to='/graphs'>start comparing</Link>.</h2>
         <Form.Group>
-            <Form.Label className='mx-2 question'>Do you have a FIDE membership?</Form.Label>
+            <Form.Label className='mx-2 question'>FIDE membership?</Form.Label>
             <Form.Check inline label='Yes' value={true} type='radio' className = 'mx-2' name='FIDE'  onClick = {()=>{setFide(true)}}/>
             <Form.Check inline label='No' value ={false} name='FIDE'  type='radio' className = 'mx-2' defaultChecked  onClick={()=>{setFide(false)}}  />
         </Form.Group>
@@ -84,7 +84,7 @@ export default function ChessForm({players, setPlayers}) {
             <Form.Check inline label='No' name='Chesscom'  type='radio' className = 'mx-2' defaultChecked onClick={()=>{setChesscom(false)}}/>
         </Form.Group>
 
-        {Chesscom && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'daily', 'puzzle']} name='ChessCom'  record={record} setRecord={setRecord}/>}
+        {Chesscom && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'daily', 'puzzle']} name='ChessCom' record={record} setRecord={setRecord} allowImport={true}/>}
         <hr/>
 
         <Form.Group>

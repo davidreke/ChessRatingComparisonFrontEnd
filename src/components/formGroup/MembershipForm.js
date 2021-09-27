@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import {Form} from 'react-bootstrap'
 import RatingInput from './RatingInput'
+import ImportButtonGroup from './ImportButtonGroup'
 
-export default function MembershipForm({inputs, name, record, setRecord}) {
+export default function MembershipForm({inputs, name, record, setRecord, allowImport}) {
 
-  const [display, setDisplay] = useState({})
+    const [display, setDisplay] = useState({})
 
-  useEffect(()=>{
+    useEffect(()=>{
       if(Object.keys(display).length === 0){
         inputs.forEach(input => {
             var newDisplay = {...display}
@@ -14,7 +15,7 @@ export default function MembershipForm({inputs, name, record, setRecord}) {
             setDisplay(newDisplay)})
       }
      
-  },[display, inputs, name])
+    },[display, inputs, name])
 
     const editDisplay = (input, visible) => {
         var newDisplay ={...display}
@@ -37,8 +38,11 @@ export default function MembershipForm({inputs, name, record, setRecord}) {
     })
 
     return (
-        <div className='ml-3 fade-in'>
-            {questions}
-        </div>
-    )
+      <div className='ml-3 fade-in'>
+        {allowImport && (
+          <ImportButtonGroup/>
+        )}
+        {questions}
+      </div>
+    );
 }
