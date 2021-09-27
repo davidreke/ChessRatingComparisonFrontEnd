@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import ChessWebAPI from 'chess-web-api'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function ImportButtonGroup() {
 
@@ -17,10 +19,16 @@ export default function ImportButtonGroup() {
       const chessAPI = new ChessWebAPI();
       chessAPI.getPlayerStats(username).then(
         function (response) {
-          console.log("Player Profile", response.body, username);
+          console.log("Player Profile", response.body, username)
+          toast.success('Import successful')
         },
         function (err) {
           console.error(err);
+          if (err.statusCode === 404) {
+            toast.error(`Could not find name ${username}`)
+          } else {
+            toast.error('Could not import stats')
+          }
         }
       );
     }
@@ -46,6 +54,9 @@ export default function ImportButtonGroup() {
 
             </div>
             <div className='import-button-separator'> - or - </div>
+            <ToastContainer 
+              closeOnClick
+            />
       </div>
     );
 }
