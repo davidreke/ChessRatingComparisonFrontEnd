@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
-import ChessWebAPI from 'chess-web-api'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ChessWebAPI from 'chess-web-api'
 
-export default function ImportButtonGroup() {
+export default function ImportButtonGroup({importedPlayerStats}) {
 
     const [username, setUsername] = useState('')
 
@@ -19,11 +19,10 @@ export default function ImportButtonGroup() {
       const chessAPI = new ChessWebAPI();
       chessAPI.getPlayerStats(username).then(
         function (response) {
-          console.log("Player Profile", response.body, username)
           toast.success('Import successful')
+          importedPlayerStats(response.body);
         },
         function (err) {
-          console.error(err);
           if (err.statusCode === 404) {
             toast.error(`Could not find name ${username}`)
           } else {
