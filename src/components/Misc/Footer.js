@@ -17,8 +17,11 @@ export default function Footer() {
                     <span><a href='https://github.com/davidreke'>GitHub</a></span>{' '}|{' '}
                     <span><a href='https://www.chess.com/member/daviddoeschess'>Chess.com </a></span>{' '}|{' '}
                     <span><a href='https://lichess.org/@/DavidDoesChess'>LiChess.org</a></span>{' '}|{' '}
+                    <span><a href='https://www.chessable.com/profile/DavidDoesChess/'>Chessable</a></span>{' '}|{' '}
+
+                   
                 </p>
-                <p>Please contact me from above sites if you see any issues</p>
+                <p>Please contact me from the above sites if you see any issues</p>
             </div>
         </div>
     )
