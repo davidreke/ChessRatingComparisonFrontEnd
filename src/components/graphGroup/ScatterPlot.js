@@ -103,7 +103,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
         svg.append("text")
         .attr('transform', `translate(${(width/2)-spacing} , ${height - (spacing *.7 )})`)
         .style("rext-anchor", "middle")
-        .text(`${(filter_one.org == 'ChessCom'? 'Chess.com':filter_one.org)}-${filter_one.type} rating:`)
+        .text(`${(filter_one.org === 'ChessCom'? 'Chess.com':filter_one.org)}-${filter_one.type} rating:`)
         .classed("svgScatterPlot", true);
 
     svg.append("text")
@@ -112,7 +112,7 @@ export default function ScatterPlot({filteredPlayers, filter_one, filter_two, se
         .attr('x', 0 - height/2 + (spacing/2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text(`${filter_two.org == 'ChessCom'? 'Chess.com':filter_two.org}-${filter_two.type} rating:`)
+        .text(`${filter_two.org === 'ChessCom'? 'Chess.com':filter_two.org}-${filter_two.type} rating:`)
         .classed("svgScatterPlot", true);
         }
 
