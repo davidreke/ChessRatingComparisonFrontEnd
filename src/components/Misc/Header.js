@@ -25,6 +25,9 @@ export default function Header() {
                 <Nav.Link href="/Graphs"  className={`${splitLocation[1] === "Graphs" ? "active" : ""} ml-auto`}>
                    Compare Ratings
                 </Nav.Link> 
+                <Nav.Link href="/Download"  className={`${splitLocation[1] === "Download" ? "active" : ""} ml-auto`}>
+                   Download Data
+                </Nav.Link> 
                 <Nav.Link  href="/About"  className={`${splitLocation[1] === "About" ? "active" : ""} ml-auto`}>
                     Updates
                 </Nav.Link>                

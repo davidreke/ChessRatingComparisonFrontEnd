@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import ChessForm from './components/formGroup/ChessForm'
 import Graphs from './components/graphGroup/Graphs'
+import Download from './components/download/Download'
 import About from './components/About/About'
 import Footer from './components/Misc/Footer'
 import {Container, Row, Col} from 'react-bootstrap'
@@ -38,6 +39,9 @@ export default function App() {
           </Route>
           <Route exact path="/">
             <ChessForm  setPlayers={setPlayers} players={players} />
+          </Route>
+          <Route  path="/download">
+            <Download  players={players} />
           </Route>
           <Route  path="/about">
             <About   />
