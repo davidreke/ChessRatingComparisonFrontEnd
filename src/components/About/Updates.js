@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Updates() {
 
-    const updates = [{title:"You Can Now Download Our Data", date:"Jan 10, 2022", description:"For the last six months we've used a simple linear regression to compare different chess ratings. However, you can now download the site's data so that you can do your own analysis. As of today we now have data on over 6,000 players for you to analyze."},
+    const updates = [{title:"You Can Now Download Our Data", date:"Jan 10, 2022", description:"For the last six months we've used a simple linear regression to compare different chess ratings. However, starting today, you can now download the site's data so that you can do your own analysis on chess ratings. As of today we now have data on over 6,000 players for you to analyze."},
     {title:"3800 Players",
         date:"Aug 20, 2021",
         description:"Over the previous weekend I shared this website on /r Chess. Thanks to the support from that community, and several other online communities, I now have over 3800 players who have submitted their ratings to the database. This goes a long way to helping us have plenty of data to show the relationship between different ratings from FIDE, USCF, Chess.com and Lichess"
