@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Button} from 'react-bootstrap'
 
 export default function Download({players}) {
 
@@ -43,7 +44,7 @@ export default function Download({players}) {
     } 
     return (
         <div>
-            <h2>Click <a href='#' onClick={downloadCSV}>here</a> to download a csv file of all player data.</h2>
+            <h2>Click <Button variant='primary'  id='downloadButton' onClick={downloadCSV}>here </Button> to download a csv file of all player data.</h2>
         </div>
     )
 }
