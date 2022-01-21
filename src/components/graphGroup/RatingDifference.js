@@ -8,7 +8,7 @@ export default function RatingDifference({label_one, label_two, standard_deviati
     useEffect(()=>{console.log(standard_deviation)},[standard_deviation])
 
     const handleChange = (e) => {
-        SetCurrentNumber(e.target.value)
+        SetCurrentNumber(e.target.valueAsNumber)
     }
 
     return (
