@@ -26,22 +26,23 @@ export default function Download({players}) {
         console.log('download CSV called')
 
         var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    if (navigator.msSaveBlob) { // IE 10+
-        navigator.msSaveBlob(blob, "Chess Rating Comparison");
-    } else {
-        var link = document.createElement("a");
-        if (link.download !== undefined) { // feature detection
-            // Browsers that support HTML5 download attribute
-            var url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", "Chess Rating Comparison");
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        if (navigator.msSaveBlob) { // IE 10+
+            navigator.msSaveBlob(blob, "Chess Rating Comparison");
+        } else {
+            var link = document.createElement("a");
+            if (link.download !== undefined) { // feature detection
+                // Browsers that support HTML5 download attribute
+                var url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", "Chess Rating Comparison");
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
         }
-    }
     } 
+    
     return (
         <div>
             <h2>Click <Button variant='primary'  id='downloadButton' onClick={downloadCSV}>here </Button> to download a csv file of all player data.</h2>
