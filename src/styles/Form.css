@@ -23,9 +23,23 @@
     margin-bottom: 28px;
 }
 
-.question, .ratingInput{
+.question, .ratingInput, .import-container {
     margin-left: 40px;
   }
+
+.import-container {
+    width: 30vw;
+    display: flex;
+    column-gap: 20px;
+}
+
+.import-container input {
+    min-width: 200px;
+}
+
+.import-button-separator {
+    padding: 15px 0 15px 15vw;
+}
 
   .form-rating-input {
       display: inline ;

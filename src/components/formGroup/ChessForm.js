@@ -84,7 +84,7 @@ export default function ChessForm({players, setPlayers}) {
             <Form.Check inline label='No' name='Chesscom'  type='radio' className = 'mx-2' defaultChecked onClick={()=>{setChesscom(false)}}/>
         </Form.Group>
 
-        {Chesscom && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'daily', 'puzzle']} name='ChessCom'  record={record} setRecord={setRecord}/>}
+        {Chesscom && <MembershipForm inputs={['bullet', 'blitz', 'rapid', 'daily', 'puzzle']} name='ChessCom' record={record} setRecord={setRecord} allowImport={true}/>}
         <hr/>
 
         <Form.Group>
