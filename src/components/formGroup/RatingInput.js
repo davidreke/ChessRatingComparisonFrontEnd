@@ -15,7 +15,7 @@ export default function RatingInput({input,name, setRecord , record}) {
       
             <Form.Group>
                 <Form.Label inline>What is your {input} rating?{' '}</Form.Label>
-                <input type='number' min={500} max={3200} className='form-rating-input' onChange={updateRecord} />
+                <input type='number' min={500} max={3200} className='form-rating-input' onChange={updateRecord} value={record[name][input]}/>
         </Form.Group>
         
     )
