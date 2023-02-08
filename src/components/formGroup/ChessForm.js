@@ -34,9 +34,9 @@ export default function ChessForm({players, setPlayers}) {
         let submitButton = document.getElementById("submitButton")
         let mustBe2 = document.getElementById("mustBe2")
         for(var org in record){
-            console.log(record[org])
+            // console.log(record[org])
             for(var type in record[org]){
-                console.log(record[org][type])
+                // console.log(record[org][type])
                 if(record[org][type] !== null){
                     count++
                 }

@@ -20,6 +20,16 @@ export default function App() {
   useEffect(() => {
     axios.get(process.env.REACT_APP_API_URL).then(
         (res)=>{
+                
+                for (let keyA in res.data ){
+                  for(let keyB in res.data[keyA]){
+                    for(let keyC in res.data[keyA][keyB]){
+                      if(501 >res.data[keyA][keyB][keyC] || 3199 <res.data[keyA][keyB][keyC] ){
+                        res.data[keyA][keyB][keyC] = null
+                      }
+                    }
+                  }
+                }
                 setPlayers(res.data)
                 }
     )

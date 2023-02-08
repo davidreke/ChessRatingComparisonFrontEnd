@@ -66,17 +66,6 @@ export default function Graphs({ players }) {
         setFilteredPlayers(newPlayers)
         console.log('new players: ', newPlayers);
 
-        // find average difference
-        // let first_total = 0
-        // let second_total = 0
-        // for (let i = 0; i < newPlayers.length; i++) {
-        //     first_total += newPlayers[i][filter_one.org][filter_one.type]
-        //     second_total += newPlayers[i][filter_two.org][filter_two.type]
-        // }
-        // let first_avg = first_total / newPlayers.length;
-        // let second_avg = second_total / newPlayers.length;
-        // let difference = first_avg - second_avg
-
     }, [players])
 
     useEffect(()=>{
